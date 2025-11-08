@@ -40,3 +40,6 @@ prefabs.json
 *.js
 /pokeemerald-*.png
 /pokeemerald_modern-*.png
+run.sh
+notes.txt
+VBA-M/*
