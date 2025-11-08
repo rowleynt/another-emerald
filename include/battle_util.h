@@ -9,6 +9,10 @@
 #define MOVE_LIMITATION_IMPRISON                (1 << 5)
 #define MOVE_LIMITATIONS_ALL                    0xFF
 
+#define MOVE_CATEGORY_STATUS                     0
+#define MOVE_CATEGORY_PHYSICAL                   1
+#define MOVE_CATEGORY_SPECIAL                    2
+
 #define ABILITYEFFECT_ON_SWITCHIN                0
 #define ABILITYEFFECT_ENDTURN                    1
 #define ABILITYEFFECT_MOVES_BLOCK                2

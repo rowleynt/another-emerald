@@ -1,0 +1,702 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wno-switch",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-o",
+      "aif2pcm",
+      "main.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/aif2pcm",
+    "file": "/home/biglarge/Github/another-emerald/tools/aif2pcm/main.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/aif2pcm/aif2pcm"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wno-switch",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-o",
+      "aif2pcm",
+      "extended.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/aif2pcm",
+    "file": "/home/biglarge/Github/another-emerald/tools/aif2pcm/extended.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/aif2pcm/aif2pcm"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-o",
+      "bin2c",
+      "bin2c.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/bin2c",
+    "file": "/home/biglarge/Github/another-emerald/tools/bin2c/bin2c.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/bin2c/bin2c"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-o",
+      "gbafix",
+      "gbafix.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbafix",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbafix/gbafix.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbafix/gbafix"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "main.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/main.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "convert_png.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/convert_png.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "gfx.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/gfx.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "jasc_pal.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/jasc_pal.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "lz.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/lz.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "rl.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/rl.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "util.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/util.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "font.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/font.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Wno-sign-compare",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "gbagfx",
+      "huff.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/gbagfx",
+    "file": "/home/biglarge/Github/another-emerald/tools/gbagfx/huff.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/gbagfx/gbagfx"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-std=c++17",
+      "-O2",
+      "-I",
+      ".",
+      "-o",
+      "jsonproc",
+      "jsonproc.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/jsonproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/jsonproc/jsonproc.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/jsonproc/jsonproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-std=c++11",
+      "-O2",
+      "-o",
+      "mapjson",
+      "json11.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mapjson",
+    "file": "/home/biglarge/Github/another-emerald/tools/mapjson/json11.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mapjson/mapjson"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-std=c++11",
+      "-O2",
+      "-o",
+      "mapjson",
+      "mapjson.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mapjson",
+    "file": "/home/biglarge/Github/another-emerald/tools/mapjson/mapjson.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mapjson/mapjson"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "mid2agb",
+      "agb.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mid2agb",
+    "file": "/home/biglarge/Github/another-emerald/tools/mid2agb/agb.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mid2agb/mid2agb"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "mid2agb",
+      "error.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mid2agb",
+    "file": "/home/biglarge/Github/another-emerald/tools/mid2agb/error.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mid2agb/mid2agb"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "mid2agb",
+      "main.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mid2agb",
+    "file": "/home/biglarge/Github/another-emerald/tools/mid2agb/main.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mid2agb/mid2agb"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "mid2agb",
+      "midi.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mid2agb",
+    "file": "/home/biglarge/Github/another-emerald/tools/mid2agb/midi.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mid2agb/mid2agb"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "mid2agb",
+      "tables.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/mid2agb",
+    "file": "/home/biglarge/Github/another-emerald/tools/mid2agb/tables.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/mid2agb/mid2agb"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "asm_file.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/asm_file.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "c_file.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/c_file.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "charmap.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/charmap.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "preproc.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/preproc.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "string_parser.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/string_parser.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "utf8.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/utf8.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "preproc",
+      "io.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/preproc",
+    "file": "/home/biglarge/Github/another-emerald/tools/preproc/io.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/preproc/preproc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "ramscrgen",
+      "main.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/ramscrgen",
+    "file": "/home/biglarge/Github/another-emerald/tools/ramscrgen/main.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/ramscrgen/ramscrgen"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "ramscrgen",
+      "sym_file.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/ramscrgen",
+    "file": "/home/biglarge/Github/another-emerald/tools/ramscrgen/sym_file.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/ramscrgen/ramscrgen"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-std=c++11",
+      "-O2",
+      "-Wall",
+      "-Wno-switch",
+      "-Werror",
+      "-o",
+      "ramscrgen",
+      "elf.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/ramscrgen",
+    "file": "/home/biglarge/Github/another-emerald/tools/ramscrgen/elf.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/ramscrgen/ramscrgen"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "rsfont",
+      "main.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/rsfont",
+    "file": "/home/biglarge/Github/another-emerald/tools/rsfont/main.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/rsfont/rsfont"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "rsfont",
+      "convert_png.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/rsfont",
+    "file": "/home/biglarge/Github/another-emerald/tools/rsfont/convert_png.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/rsfont/rsfont"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "rsfont",
+      "util.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/rsfont",
+    "file": "/home/biglarge/Github/another-emerald/tools/rsfont/util.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/rsfont/rsfont"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-std=c11",
+      "-O2",
+      "-DPNG_SKIP_SETJMP_CHECK",
+      "-I/usr/include/libpng16",
+      "-DWITH_GZFILEOP",
+      "-o",
+      "rsfont",
+      "font.c"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/rsfont",
+    "file": "/home/biglarge/Github/another-emerald/tools/rsfont/font.c",
+    "output": "/home/biglarge/Github/another-emerald/tools/rsfont/rsfont"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-Werror",
+      "-std=c++11",
+      "-O2",
+      "-o",
+      "scaninc",
+      "scaninc.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/scaninc",
+    "file": "/home/biglarge/Github/another-emerald/tools/scaninc/scaninc.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/scaninc/scaninc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-Werror",
+      "-std=c++11",
+      "-O2",
+      "-o",
+      "scaninc",
+      "c_file.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/scaninc",
+    "file": "/home/biglarge/Github/another-emerald/tools/scaninc/c_file.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/scaninc/scaninc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-Werror",
+      "-std=c++11",
+      "-O2",
+      "-o",
+      "scaninc",
+      "asm_file.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/scaninc",
+    "file": "/home/biglarge/Github/another-emerald/tools/scaninc/asm_file.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/scaninc/scaninc"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Wall",
+      "-Werror",
+      "-std=c++11",
+      "-O2",
+      "-o",
+      "scaninc",
+      "source_file.cpp"
+    ],
+    "directory": "/home/biglarge/Github/another-emerald/tools/scaninc",
+    "file": "/home/biglarge/Github/another-emerald/tools/scaninc/source_file.cpp",
+    "output": "/home/biglarge/Github/another-emerald/tools/scaninc/scaninc"
+  }
+]

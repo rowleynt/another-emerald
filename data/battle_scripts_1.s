@@ -4393,6 +4393,12 @@ BattleScript_FocusBandActivates::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_SturdyActivates::
+	playanimation BS_TARGET, B_ANIM_FOCUS_BAND
+	printstring STRINGID_PKMNHUNGONWITHABILITY
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_BerryConfuseHealEnd2::
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT
 	printstring STRINGID_PKMNSITEMRESTOREDHEALTH
