@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_MOVES_H
 #define GUARD_CONSTANTS_MOVES_H
 
+// Vanilla
+
 #define MOVE_NONE 0
 #define MOVE_POUND 1
 #define MOVE_KARATE_CHOP 2
@@ -357,7 +359,14 @@
 #define MOVE_DOOM_DESIRE 353
 #define MOVE_PSYCHO_BOOST 354
 
-#define MOVES_COUNT 355
+// New
+
+#define MOVE_FIRE_FANG 355
+#define MOVE_ICE_FANG 356
+#define MOVE_THUNDER_FANG 357
+#define MOVE_STEEL_FANG 358
+
+#define MOVES_COUNT 359
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

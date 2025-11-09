@@ -1417,6 +1417,24 @@ static const u8 sPsychoBoostDescription[] = _(
     "Allows a full-power attack,\n"
     "but sharply lowers SP. ATK.");
 
+// New
+
+static const u8 sFireFangDescription[] = _(
+    "Bites with fiery fangs that\n"
+    "may burn the foe.");
+
+static const u8 sIceFangDescription[] = _(
+    "Bites with icy fangs that\n"
+    "may freeze the foe.");
+
+static const u8 sThunderFangDescription[] = _(
+    "Bites with electrified fangs\n"
+    "that may paralyze the foe.");
+
+static const u8 sSteelFangDescription[] = _(
+    "Bites the foe with stiffened\n"
+    "fangs. May raise defense.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1774,4 +1792,11 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_WATER_PULSE - 1] = sWaterPulseDescription,
     [MOVE_DOOM_DESIRE - 1] = sDoomDesireDescription,
     [MOVE_PSYCHO_BOOST - 1] = sPsychoBoostDescription,
+
+    // New
+
+    [MOVE_FIRE_FANG - 1] = sFireFangDescription,
+    [MOVE_ICE_FANG - 1] = sIceFangDescription,
+    [MOVE_THUNDER_FANG - 1] = sThunderFangDescription,
+    [MOVE_STEEL_FANG - 1] = sSteelFangDescription,
 };

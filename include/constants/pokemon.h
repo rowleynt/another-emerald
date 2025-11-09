@@ -211,6 +211,8 @@
 #define FLAG_SNATCH_AFFECTED        (1 << 3)
 #define FLAG_MIRROR_MOVE_AFFECTED   (1 << 4)
 #define FLAG_KINGS_ROCK_AFFECTED    (1 << 5)
+#define FLAG_IRON_FIST_AFFECTED     (1 << 6)
+#define FLAG_STRONG_JAW_AFFECTED    (1 << 7)
 
 // Growth rates
 #define GROWTH_MEDIUM_FAST  0
