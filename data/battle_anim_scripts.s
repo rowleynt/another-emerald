@@ -376,6 +376,7 @@ gBattleAnims_Moves::
 	.4byte Move_THUNDER_FANG
 	.4byte Move_STEEL_FANG
 	.4byte Move_DRAIN_PUNCH
+	.4byte Move_POWER_UP_PUNCH
 	.4byte Move_COUNT @ cannot be reached, because last move is Psycho Boost
 
 	.align 2
@@ -10032,6 +10033,24 @@ Move_DRAIN_PUNCH:
 	waitforvisualfinish
 	delay 15
 	call HealingEffect
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	end
+
+Move_POWER_UP_PUNCH:
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_GrowAndShrink, 2
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	delay 1
+	monbg ANIM_DEF_PARTNER
+	setalpha 12, 8
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 5, 0, 7, 1
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff

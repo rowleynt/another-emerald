@@ -5041,4 +5041,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MAKES_CONTACT | FLAG_IRON_FIST_AFFECTED,
         .category= MOVE_CATEGORY_PHYSICAL,
     },
+
+    [MOVE_POWER_UP_PUNCH] =
+    {
+        .effect = EFFECT_ATTACK_UP_HIT,
+        .power = 40,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 25,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MAKES_CONTACT | FLAG_IRON_FIST_AFFECTED,
+        .category= MOVE_CATEGORY_PHYSICAL,
+    },
 };
