@@ -3111,6 +3111,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     u8 type;
     u16 attack, defense;
     u16 spAttack, spDefense;
+    u16 abilityAttacker, abilityDefender;
     u8 defenderHoldEffect;
     u8 defenderHoldEffectParam;
     u8 attackerHoldEffect;
@@ -3130,6 +3131,11 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     defense = defender->defense;
     spAttack = attacker->spAttack;
     spDefense = defender->spDefense;
+
+    abilityAttacker = attacker->ability;
+
+    if (gBattleMoves[move].power <= 60 && attacker->ability == ABILITY_TECHNICIAN)
+        gBattleMovePower = gBattleMovePower * 15 / 10;
 
     // Get attacker hold item info
     if (attacker->item == ITEM_ENIGMA_BERRY)
