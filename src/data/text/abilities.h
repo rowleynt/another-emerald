@@ -78,6 +78,7 @@ static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
 
 static const u8 sNoGuardDescription[] = _("Moves always hit.");
+static const u8 sPranksterDescription[] = _("Prioritizes status moves.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -161,6 +162,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AIR_LOCK] = _("AIR LOCK"),
 
     [ABILITY_NO_GUARD] = _("NO GUARD"),
+    [ABILITY_PRANKSTER] = _("PRANKSTER"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -245,4 +247,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_AIR_LOCK] = sAirLockDescription,
 
     [ABILITY_NO_GUARD] = sNoGuardDescription,
+    [ABILITY_PRANKSTER] = sPranksterDescription,
 };
