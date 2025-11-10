@@ -1444,8 +1444,12 @@ static const u8 sPowerUpPunchDescription[] = _(
     "Raises attack.");
 
 static const u8 sSeedBombDescription[] = _(
-    "Strikes the foe with a barrage\n"
-    "of hard-shelled seeds.");
+    "Strikes the foe with a\n"
+    "barrage of hard-shelled seeds.");
+
+static const u8 sXScissorDescription[] = _(
+    "Slashes the foe with crossed\n"
+    "scythes or claws.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -1814,4 +1818,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DRAIN_PUNCH - 1] = sDrainPunchDescription,
     [MOVE_POWER_UP_PUNCH - 1] = sPowerUpPunchDescription,
     [MOVE_SEED_BOMB - 1] = sSeedBombDescription,
+    [MOVE_X_SCISSOR - 1] = sXScissorDescription,
 };
