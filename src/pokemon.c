@@ -3132,9 +3132,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     spAttack = attacker->spAttack;
     spDefense = defender->spDefense;
 
-    abilityAttacker = attacker->ability;
-
-    gBattleMovePower = GetAbilityBaseDamageModifier(attacker->ability, defender->ability, gBattleMovePower);
+    gBattleMovePower = GetAbilityBaseDamageModifier(attacker->ability, defender->ability, move);
 
     // Get attacker hold item info
     if (attacker->item == ITEM_ENIGMA_BERRY)
@@ -3375,14 +3373,24 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
 }
 
 // Modifies the base power of a move based off of the attacker and/or defender ability
-u8 GetAbilityBaseDamageModifier(u8 attackerAbility, u8 defenderAbility, u8 moveBasePower)
+u8 GetAbilityBaseDamageModifier(u8 attackerAbility, u8 defenderAbility, u8 move)
 {
-    u8 moveModifiedDamage = moveBasePower;
+    u8 moveModifiedDamage = gBattleMoves[move].power;
+    u8 moveFlags = gBattleMoves[move].flags;
 
     switch (attackerAbility)
     {
         case ABILITY_TECHNICIAN:
-            moveModifiedDamage = moveModifiedDamage * 15 / 10;
+            if (gBattleMoves[move].power <= 60)
+                moveModifiedDamage = moveModifiedDamage * 15 / 10;
+            break;
+        case ABILITY_IRON_FIST:
+            if (moveFlags & FLAG_IRON_FIST_AFFECTED)
+                moveModifiedDamage = moveModifiedDamage * 15 / 10;
+            break;
+        case ABILITY_STRONG_JAW:
+            if (moveFlags & FLAG_STRONG_JAW_AFFECTED)
+                moveModifiedDamage = moveModifiedDamage * 15 / 10;
             break;
         default:
             break;

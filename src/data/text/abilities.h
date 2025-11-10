@@ -80,6 +80,8 @@ static const u8 sAirLockDescription[] = _("Negates weather effects.");
 static const u8 sNoGuardDescription[] = _("Moves always hit.");
 static const u8 sPranksterDescription[] = _("Prioritizes status moves.");
 static const u8 sTechnicianDescription[] = _("Powers up weak moves.");
+static const u8 sIronFistDescription[] = _("Powers up punching moves.");
+static const u8 sStrongJawDescription[] = _("Powers up biting moves.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -165,6 +167,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_NO_GUARD] = _("NO GUARD"),
     [ABILITY_PRANKSTER] = _("PRANKSTER"),
     [ABILITY_TECHNICIAN] = _("TECHNICIAN"),
+    [ABILITY_IRON_FIST] = _("IRON FIST"),
+    [ABILITY_STRONG_JAW] = _("STRONG JAW"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -251,4 +255,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_NO_GUARD] = sNoGuardDescription,
     [ABILITY_PRANKSTER] = sPranksterDescription,
     [ABILITY_TECHNICIAN] = sTechnicianDescription,
+    [ABILITY_IRON_FIST] = sIronFistDescription,
+    [ABILITY_STRONG_JAW] = sStrongJawDescription,
 };
