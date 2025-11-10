@@ -3134,10 +3134,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
 
     abilityAttacker = attacker->ability;
 
-    /*
-    if (gBattleMoves[move].power <= 60 && attacker->ability == ABILITY_TECHNICIAN)
-        gBattleMovePower = gBattleMovePower * 15 / 10; */
-
     gBattleMovePower = GetAbilityBaseDamageModifier(attacker->ability, defender->ability, gBattleMovePower);
 
     // Get attacker hold item info
