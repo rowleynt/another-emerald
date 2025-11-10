@@ -3134,8 +3134,11 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
 
     abilityAttacker = attacker->ability;
 
+    /*
     if (gBattleMoves[move].power <= 60 && attacker->ability == ABILITY_TECHNICIAN)
-        gBattleMovePower = gBattleMovePower * 15 / 10;
+        gBattleMovePower = gBattleMovePower * 15 / 10; */
+
+    gBattleMovePower = GetAbilityBaseDamageModifier(attacker->ability, defender->ability, gBattleMovePower);
 
     // Get attacker hold item info
     if (attacker->item == ITEM_ENIGMA_BERRY)
@@ -3373,6 +3376,29 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         damage = (15 * damage) / 10;
 
     return damage + 2;
+}
+
+// Modifies the base power of a move based off of the attacker and/or defender ability
+u8 GetAbilityBaseDamageModifier(u8 attackerAbility, u8 defenderAbility, u8 moveBasePower)
+{
+    u8 moveModifiedDamage = moveBasePower;
+
+    switch (attackerAbility)
+    {
+        case ABILITY_TECHNICIAN:
+            moveModifiedDamage = moveModifiedDamage * 15 / 10;
+            break;
+        default:
+            break;
+    }
+
+    switch (defenderAbility)
+    {
+        default:
+            break;
+    }
+
+    return moveModifiedDamage;
 }
 
 u8 CountAliveMonsInBattle(u8 caseId)
