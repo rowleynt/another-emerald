@@ -4600,7 +4600,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     u8 holdEffect = 0;
     u8 holdEffectParam = 0;
     u16 moveBattler1 = 0, moveBattler2 = 0;
-    u8 movePriority1, movePriority2;
+    s8 movePriority1, movePriority2;
 
     if (WEATHER_HAS_EFFECT)
     {
