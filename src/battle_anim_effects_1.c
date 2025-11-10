@@ -45,6 +45,8 @@ static void AnimRazorLeafParticle_Step2(struct Sprite *);
 static void AnimLeechSeed(struct Sprite *);
 static void AnimLeechSeed_Step(struct Sprite *);
 static void AnimLeechSeedSprouts(struct Sprite *);
+static void AnimLeechSeed_NoSprouts(struct Sprite *);
+static void AnimLeechSeed_NoSprouts_Step(struct Sprite *);
 static void AnimTranslateLinearSingleSineWave(struct Sprite *);
 static void AnimTranslateLinearSingleSineWave_Step(struct Sprite *);
 static void AnimConstrictBinding(struct Sprite *);
@@ -396,6 +398,11 @@ const union AnimCmd *const gLeechSeedAnimTable[] =
     gLeechSeedAnimCmds2,
 };
 
+const union AnimCmd *const gLeechSeedNoSproutsAnimTable[] =
+{
+    gLeechSeedAnimCmds1,
+};
+
 const struct SpriteTemplate gLeechSeedSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SEED,
@@ -405,6 +412,17 @@ const struct SpriteTemplate gLeechSeedSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimLeechSeed,
+};
+
+const struct SpriteTemplate gLeechSeedNoSproutsSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SEED,
+    .paletteTag = ANIM_TAG_SEED,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gLeechSeedNoSproutsAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimLeechSeed_NoSprouts,
 };
 
 const union AnimCmd gSporeParticleAnimCmds1[] =
@@ -2431,6 +2449,31 @@ static void AnimLeechSeedSprouts(struct Sprite *sprite)
     sprite->data[0] = 60;
     sprite->callback = WaitAnimForDuration;
     StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+}
+
+static void AnimLeechSeed_NoSprouts(struct Sprite *sprite)
+{
+    InitSpritePosToAnimAttacker(sprite, TRUE);
+    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
+        gBattleAnimArgs[2] = -gBattleAnimArgs[2];
+
+    sprite->data[0] = gBattleAnimArgs[4];
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X) + gBattleAnimArgs[2];
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) + gBattleAnimArgs[3];
+    sprite->data[5] = gBattleAnimArgs[5];
+    InitAnimArcTranslation(sprite);
+    sprite->callback = AnimLeechSeed_NoSprouts_Step;
+}
+
+static void AnimLeechSeed_NoSprouts_Step(struct Sprite *sprite)
+{
+    if (TranslateAnimHorizontalArc(sprite))
+    {
+        sprite->invisible = TRUE;
+        sprite->data[0] = 10;
+        sprite->callback = WaitAnimForDuration;
+        StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+    }
 }
 
 // Moves a spore particle in a halo around the target mon.
