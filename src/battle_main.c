@@ -4600,7 +4600,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     u8 holdEffect = 0;
     u8 holdEffectParam = 0;
     u16 moveBattler1 = 0, moveBattler2 = 0;
-    s8 movePriority1, movePriority2;
+    s8 p1 = 0, p2 = 0;
 
     if (WEATHER_HAS_EFFECT)
     {
@@ -4720,14 +4720,11 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         }
     }
 
-    movePriority1 = GetMovePriority(moveBattler1, battler1);
-    movePriority2 = GetMovePriority(moveBattler2, battler2);
-
     // both move priorities are different than 0
-    if (movePriority1 != 0 || movePriority2 != 0)
+    if (gBattleMoves[moveBattler1].priority != 0 || gBattleMoves[moveBattler2].priority != 0)
     {
         // both priorities are the same
-        if (movePriority1 == movePriority2)
+        if (gBattleMoves[moveBattler1].priority == gBattleMoves[moveBattler2].priority)
         {
             if (speedBattler1 == speedBattler2 && Random() & 1)
                 strikesFirst = 2; // same speeds, same priorities
@@ -4736,7 +4733,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 
             // else battler1 has more speed
         }
-        else if (movePriority1 < movePriority2)
+        else if (gBattleMoves[moveBattler1].priority < gBattleMoves[moveBattler2].priority)
         {
             strikesFirst = 1; // battler2's move has greater priority
         }
@@ -4757,13 +4754,17 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     return strikesFirst;
 }
 
-u8 GetMovePriority(u8 move, u8 battler)
+// TODO: fix dynamic move priorities
+u8 GetMovePriority(u8 move, u8 battler, s8 priority)
 {
-    u8 priority = gBattleMoves[move].priority;
-
-    if (gBattleMoves[move].category == MOVE_CATEGORY_STATUS && gBattleMons[battler].ability == ABILITY_PRANKSTER)
+    switch (gBattleMons[battler].ability)
     {
-        priority++;
+        case ABILITY_PRANKSTER:
+            if (gBattleMoves[move].category == MOVE_CATEGORY_STATUS)
+                priority++;
+            break;
+        default:
+            break;
     }
 
     return priority;
