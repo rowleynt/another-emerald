@@ -549,6 +549,6 @@ struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 managerId, u8 mode);
 void DestroyMonSpritesGfxManager(u8 managerId);
 u8 *MonSpritesGfxManager_GetSpritePtr(u8 managerId, u8 spriteNum);
 
-u8 GetAbilityBaseDamageModifier(u8 attackerAbility, u8 defenderAbility, u8 move);
+u8 GetAbilityBaseDamageModifier(u8 attackerAbility, u8 defenderAbility, u8 moveFlags, u8 movePower);
 
 #endif // GUARD_POKEMON_H

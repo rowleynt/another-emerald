@@ -3132,8 +3132,31 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     spAttack = attacker->spAttack;
     spDefense = defender->spDefense;
 
-    //gBattleMovePower = GetAbilityBaseDamageModifier(attacker->ability, defender->ability, move);
+    // Modify move's base power based on attacker / defender ability
+    switch (attacker->ability)
+    {
+        case ABILITY_TECHNICIAN:
+            if (gBattleMovePower <= 60)
+                gBattleMovePower = gBattleMovePower * 15 / 10;
+            break;
+        case ABILITY_IRON_FIST:
+            if (gBattleMoves[move].flags & FLAG_IRON_FIST_AFFECTED)
+                gBattleMovePower = gBattleMovePower * 15 / 10;
+            break;
+        case ABILITY_STRONG_JAW:
+            if (gBattleMoves[move].flags & FLAG_STRONG_JAW_AFFECTED)
+                gBattleMovePower = gBattleMovePower * 15 / 10;
+            break;
+        default:
+            break;
+    }
 
+    switch (defender->ability)
+    {
+        default:
+            break;
+    }
+        
     // Get attacker hold item info
     if (attacker->item == ITEM_ENIGMA_BERRY)
     {
@@ -3375,39 +3398,6 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         damage = (15 * damage) / 10;
 
     return damage + 2;
-}
-
-// Modifies the base power of a move based off of the attacker and/or defender ability
-u8 GetAbilityBaseDamageModifier(u8 attackerAbility, u8 defenderAbility, u8 move)
-{
-    u8 moveModifiedDamage = gBattleMoves[move].power;
-    u8 moveFlags = gBattleMoves[move].flags;
-
-    switch (attackerAbility)
-    {
-        case ABILITY_TECHNICIAN:
-            if (gBattleMoves[move].power <= 60)
-                moveModifiedDamage = moveModifiedDamage * 15 / 10;
-            break;
-        case ABILITY_IRON_FIST:
-            if (moveFlags & FLAG_IRON_FIST_AFFECTED)
-                moveModifiedDamage = moveModifiedDamage * 15 / 10;
-            break;
-        case ABILITY_STRONG_JAW:
-            if (moveFlags & FLAG_STRONG_JAW_AFFECTED)
-                moveModifiedDamage = moveModifiedDamage * 15 / 10;
-            break;
-        default:
-            break;
-    }
-
-    switch (defenderAbility)
-    {
-        default:
-            break;
-    }
-
-    return moveModifiedDamage;
 }
 
 u8 CountAliveMonsInBattle(u8 caseId)
