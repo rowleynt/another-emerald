@@ -211,6 +211,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_WATER_SPORT, AI_CBM_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CBM_CalmMind
 	if_effect EFFECT_DRAGON_DANCE, AI_CBM_DragonDance
+	if_effect EFFECT_HONE_CLAWS, AI_CBM_HoneClaws
 	end
 
 AI_CBM_Sleep:
@@ -576,6 +577,11 @@ AI_CBM_Tickle:
 AI_CBM_CosmicPower:
 	if_stat_level_equal AI_USER, STAT_DEF, MAX_STAT_STAGE, Score_Minus10
 	if_stat_level_equal AI_USER, STAT_SPDEF, MAX_STAT_STAGE, Score_Minus8
+	end
+
+AI_CBM_HoneClaws:
+	if_stat_level_equal AI_USER, STAT_ATK, MAX_STAT_STAGE, Score_Minus10
+	if_stat_level_equal AI_USER, STAT_ACC, MAX_STAT_STAGE, Score_Minus8
 	end
 
 AI_CBM_BulkUp:

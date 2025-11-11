@@ -379,7 +379,8 @@ gBattleAnims_Moves::
 	.4byte Move_POWER_UP_PUNCH
 	.4byte Move_SEED_BOMB
 	.4byte Move_X_SCISSOR
-	.4byte Move_COUNT @ cannot be reached, because last move is Psycho Boost
+	.4byte Move_HONE_CLAWS
+	.4byte Move_COUNT @ cannot be reached
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -10105,6 +10106,26 @@ Move_X_SCISSOR:
 	clearmonbg ANIM_TARGET
 	blendoff
 	waitforvisualfinish
+	end
+
+Move_HONE_CLAWS:
+	loadspritegfx ANIM_TAG_SWIPE
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET
+	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, 16, 0, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 3, 0, 5, 1
+	delay 20
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET
+	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, -16, 0, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 4, 0, 7, 1
+	delay 20
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET
+	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, 16, 0, 1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 4, 0, 7, 1
+	delay 20
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET
+	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, -16, 0, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 4, 0, 7, 1
+	clearmonbg ANIM_TARGET
 	end
 
 Move_COUNT:
