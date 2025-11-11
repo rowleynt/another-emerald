@@ -381,6 +381,7 @@ gBattleAnims_Moves::
 	.4byte Move_X_SCISSOR
 	.4byte Move_HONE_CLAWS
 	.4byte Move_BOULDER_PUNCH
+	.4byte Move_BULLET_PUNCH
 	.4byte Move_COUNT @ cannot be reached
 
 	.align 2
@@ -10153,21 +10154,47 @@ Move_BOULDER_PUNCH:
 	waitforvisualfinish
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 16, 0, 0, 4
 	delay 3
-
 	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
 	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 20, 1, 0
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 5, 0, 7, 1
-
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, 160, -32
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -256, -40
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, 128, -16
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, 416, -38
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -128, -22
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -384, -31
-
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	end
+
+Move_BULLET_PUNCH:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
+	createvisualtask AnimTask_MetallicShine, 5, 0, 0, RGB_BLACK
+	delay 50
+	monbg ANIM_ATK_PARTNER
+	createvisualtask AnimTask_AttackerPunchWithTrace, 2, RGB_BLACK, 10
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, -15, 18, ANIM_TARGET, 0
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	delay 1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 5, 0, 25, 1
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, -15, 18, 8, 1, 0
+	delay 3
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, -4, ANIM_TARGET, 0
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	delay 1
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 0, -4, 8, 1, 0
+	delay 3
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 15, 9, ANIM_TARGET, 0
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	delay 1
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 15, 9, 8, 1, 0
+	clearmonbg ANIM_ATK_PARTNER
 	blendoff
 	end
 

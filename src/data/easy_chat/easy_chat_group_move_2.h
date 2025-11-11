@@ -24,6 +24,7 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_BOUNCE,
     MOVE_BUBBLE_BEAM,
     MOVE_BULK_UP,
+    MOVE_BULLET_PUNCH,
     MOVE_BULLET_SEED,
     MOVE_CALM_MIND,
     MOVE_CAMOUFLAGE,
