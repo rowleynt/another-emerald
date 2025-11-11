@@ -12,6 +12,7 @@ const u16 gEasyChatGroup_Move1[] = {
     MOVE_BIDE,
     MOVE_BIND,
     MOVE_BITE,
+    MOVE_BOULDER_PUNCH,
     MOVE_BRICK_BREAK,
     MOVE_BUBBLE,
     MOVE_CHARGE,

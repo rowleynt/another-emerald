@@ -2906,6 +2906,14 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .comboStarterId = 0,
         .comboMoves = {0},
     },
+
+    [MOVE_BOULDER_PUNCH] =
+    {
+        .effect = CONTEST_EFFECT_BETTER_WHEN_AUDIENCE_EXCITED,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .comboStarterId = 0,
+        .comboMoves = {0},
+    },
 };
 
 const struct ContestEffect gContestEffects[] =

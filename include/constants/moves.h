@@ -370,8 +370,9 @@
 #define MOVE_SEED_BOMB 361
 #define MOVE_X_SCISSOR 362
 #define MOVE_HONE_CLAWS 363
+#define MOVE_BOULDER_PUNCH 364
 
-#define MOVES_COUNT 364
+#define MOVES_COUNT 365
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

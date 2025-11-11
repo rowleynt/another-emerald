@@ -380,6 +380,7 @@ gBattleAnims_Moves::
 	.4byte Move_SEED_BOMB
 	.4byte Move_X_SCISSOR
 	.4byte Move_HONE_CLAWS
+	.4byte Move_BOULDER_PUNCH
 	.4byte Move_COUNT @ cannot be reached
 
 	.align 2
@@ -10025,7 +10026,7 @@ Move_DRAIN_PUNCH:
 	loadspritegfx ANIM_TAG_ORBS
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	delay 1
-	monbg ANIM_DEF_PARTNER
+	monbg ANIM_TARGET
 	setalpha 12, 8
 	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
 	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 20, 1, 0
@@ -10037,7 +10038,7 @@ Move_DRAIN_PUNCH:
 	delay 15
 	call HealingEffect
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
+	clearmonbg ANIM_TARGET
 	blendoff
 	end
 
@@ -10048,14 +10049,14 @@ Move_POWER_UP_PUNCH:
 	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
 	waitforvisualfinish
 	delay 1
-	monbg ANIM_DEF_PARTNER
+	monbg ANIM_TARGET
 	setalpha 12, 8
 	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
 	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 20, 1, 0
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 5, 0, 7, 1
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
+	clearmonbg ANIM_TARGET
 	blendoff
 	end
 
@@ -10126,6 +10127,48 @@ Move_HONE_CLAWS:
 	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, -16, 0, 0
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 4, 0, 7, 1
 	clearmonbg ANIM_TARGET
+	end
+
+Move_BOULDER_PUNCH:
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_ROCKS
+	monbg ANIM_DEF_PARTNER
+	setalpha 12, 8
+	createsprite gShakeMonOrPlatformSpriteTemplate, ANIM_ATTACKER, 2, 4, 1, 10, 1
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 20, 32, -48, 50, 2
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 0, 32, -38, 25, 5
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 32, 32, -28, 40, 3
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, -20, 32, -48, 50, 2
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 20, 32, -28, 60, 1
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 0, 32, -28, 30, 4
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 30, 1
+	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	delay 10
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 15, 32, -48, 25, 5
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, -10, 32, -42, 30, 4
+	delay 10
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 0, 32, -42, 25, 5
+	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, -25, 32, -48, 30, 4
+	waitforvisualfinish
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 16, 0, 0, 4
+	delay 3
+
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 20, 1, 0
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 5, 0, 7, 1
+
+	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, 160, -32
+	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -256, -40
+	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, 128, -16
+	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, 416, -38
+	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -128, -22
+	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -384, -31
+
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
 	end
 
 Move_COUNT:

@@ -25,6 +25,9 @@ static void AnimParticleInVortex(struct Sprite *);
 static void AnimParticleInVortex_Step(struct Sprite *sprite);
 static void AnimTask_LoadSandstormBackground_Step(u8 taskId);
 static void CreateRolloutDirtSprite(struct Task *task);
+
+static void AnimBoulderPunchRock(struct Sprite *sprite);
+
 static u8 GetRolloutCounter(void);
 
 static const union AnimCmd sAnim_FlyingRock_0[] =
@@ -293,6 +296,41 @@ const struct SpriteTemplate gWeatherBallRockDownSpriteTemplate =
     .affineAnims = sAffineAnims_BasicRock,
     .callback = AnimWeatherBallDown,
 };
+
+const struct SpriteTemplate gBoulderPunchRockSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ROCKS,
+    .paletteTag = ANIM_TAG_ROCKS,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = &sAnims_BasicRock[3],
+    .images = NULL,
+    .affineAnims = sAffineAnims_BasicRock,
+    .callback = AnimBoulderPunchRock,
+};
+
+static void AnimBoulderPunchRock(struct Sprite *sprite)
+{
+    if (sprite->data[0] == 0)
+    {
+        InitSpritePosToAnimTarget(sprite, TRUE);
+        sprite->data[1] = gBattleAnimArgs[2];
+        sprite->data[2] = gBattleAnimArgs[3];
+        sprite->data[0]++;
+    }
+    else
+    {
+        sprite->data[4] += sprite->data[1];
+        sprite->x2 = sprite->data[4] >> 8;
+        sprite->y2 = Sin(sprite->data[3], sprite->data[2]);
+        sprite->data[3] = (sprite->data[3] + 3) & 0xFF;
+
+        if (sprite->data[3] > 100)
+            sprite->invisible = sprite->data[3] % 2;
+
+        if (sprite->data[3] > 120)
+            DestroyAnimSprite(sprite);
+    }
+}
 
 static void AnimFallingRock(struct Sprite *sprite)
 {

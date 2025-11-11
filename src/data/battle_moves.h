@@ -3390,7 +3390,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_CRUNCH] =
     {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
+        .effect = EFFECT_DEFENSE_DOWN_HIT,
         .power = 80,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -4238,7 +4238,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_AFFECTED,
         .category= MOVE_CATEGORY_PHYSICAL,
     },
 
@@ -5096,5 +5096,19 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .priority = 0,
         .flags = FLAG_SNATCH_AFFECTED,
         .category= MOVE_CATEGORY_STATUS,
+    },
+
+    [MOVE_BOULDER_PUNCH] =
+    {
+        .effect = EFFECT_DEFENSE_DOWN_HIT,
+        .power = 80,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MAKES_CONTACT | FLAG_IRON_FIST_AFFECTED,
+        .category= MOVE_CATEGORY_PHYSICAL,
     },
 };
