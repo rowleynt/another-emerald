@@ -379,8 +379,9 @@
 #define STRINGID_TRAINER1WINTEXT            379
 #define STRINGID_TRAINER2WINTEXT            380
 #define STRINGID_PKMNHUNGONWITHABILITY      381
+#define STRINGID_PKMNMAKESWATERMISS         382
 
-#define BATTLESTRINGS_COUNT                 382
+#define BATTLESTRINGS_COUNT                 383
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -412,6 +413,7 @@
 #define B_MSG_AVOIDED_ATK  2
 #define B_MSG_AVOIDED_DMG  3
 #define B_MSG_GROUND_MISS  4
+#define B_MSG_WATER_MISS   5
 
 // gAbsorbDrainStringIds
 #define B_MSG_ABSORB      0
