@@ -383,6 +383,7 @@ gBattleAnims_Moves::
 	.4byte Move_BOULDER_PUNCH
 	.4byte Move_BULLET_PUNCH
 	.4byte Move_HEAT_UP
+	.4byte Move_COTTON_GUARD
 	.4byte Move_COUNT @ cannot be reached
 
 	.align 2
@@ -10206,6 +10207,15 @@ Move_HEAT_UP:
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 32, 1
 	delay 8
 	call FireSpreadEffect
+	waitforvisualfinish
+	end
+
+Move_COTTON_GUARD:
+	loadspritegfx ANIM_TAG_SPORE
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 6
+	createvisualtask AnimTask_SwayMon, 5, 0, 10, 1536, 3, ANIM_ATTACKER
+	call CreateCottonSpores
+	call CreateCottonSpores
 	waitforvisualfinish
 	end
 

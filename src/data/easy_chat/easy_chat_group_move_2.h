@@ -73,6 +73,7 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_GLARE,
     MOVE_GROWL,
     MOVE_GUILLOTINE,
+    MOVE_HEAT_UP,
     MOVE_HEAT_WAVE,
     MOVE_HELPING_HAND,
     MOVE_HI_JUMP_KICK,

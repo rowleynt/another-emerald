@@ -234,6 +234,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
 	.4byte BattleScript_EffectHoneClaws              @ EFFECT_HONE_CLAWS
 	.4byte BattleScript_EffectHeatUp	             @ EFFECT_HEAT_UP
+	.4byte BattleScript_EffectDefenseUp3             @ EFFECT_DEFENSE_UP_3
+	.4byte BattleScript_EffectSpecialAttackUp3       @ EFFECT_SPECIAL_ATTACK_UP_3
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -944,6 +946,14 @@ BattleScript_EffectSpecialAttackUp2::
 
 BattleScript_EffectSpecialDefenseUp2::
 	setstatchanger STAT_SPDEF, 2, FALSE
+	goto BattleScript_EffectStatUp
+
+BattleScript_EffectDefenseUp3::
+	setstatchanger STAT_DEF, 3, FALSE
+	goto BattleScript_EffectStatUp
+
+BattleScript_EffectSpecialAttackUp3::
+	setstatchanger STAT_SPATK, 3, FALSE
 	goto BattleScript_EffectStatUp
 
 BattleScript_EffectTransform::

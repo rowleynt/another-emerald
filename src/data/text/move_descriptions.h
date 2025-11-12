@@ -1467,6 +1467,10 @@ static const u8 sHeatUpDescription[] = _(
     "Heats up the body to boost\n"
     "both ATTACK and SPEED.");
 
+static const u8 sCottonGuardDescription[] = _(
+    "Wraps body in soft cotton\n"
+    "drastically boosting DEFENSE.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1839,4 +1843,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_BOULDER_PUNCH - 1] = sBoulderPunchDescription,
     [MOVE_BULLET_PUNCH - 1] = sBulletPunchDescription,
     [MOVE_HEAT_UP - 1] = sHeatUpDescription,
+    [MOVE_COTTON_GUARD - 1] = sCottonGuardDescription,
 };

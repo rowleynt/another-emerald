@@ -301,6 +301,8 @@ static const u8 sText_PkmnsXHadNoEffectOnY[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX
 static const u8 sText_StatSharply[] = _("sharply ");
 const u8 gText_StatRose[] = _("rose!");
 static const u8 sText_StatHarshly[] = _("harshly ");
+static const u8 sText_StatDrastically[] = _("drastically ");
+static const u8 sText_StatSeverely[] = _("severely ");
 static const u8 sText_StatFell[] = _("fell!");
 static const u8 sText_AttackersStatRose[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_BUFF1}\n{B_BUFF2}");
 const u8 gText_DefendersStatRose[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_BUFF1}\n{B_BUFF2}");
@@ -718,6 +720,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT - BATTLESTRINGS_TABLE_ST
     [STRINGID_STATSHARPLY - BATTLESTRINGS_TABLE_START] = sText_StatSharply,
     [STRINGID_STATROSE - BATTLESTRINGS_TABLE_START] = gText_StatRose,
     [STRINGID_STATHARSHLY - BATTLESTRINGS_TABLE_START] = sText_StatHarshly,
+    [STRINGID_STATDRASTICALLY - BATTLESTRINGS_TABLE_START] = sText_StatDrastically,
+    [STRINGID_STATSEVERELY - BATTLESTRINGS_TABLE_START] = sText_StatSeverely,
     [STRINGID_STATFELL - BATTLESTRINGS_TABLE_START] = sText_StatFell,
     [STRINGID_ATTACKERSSTATROSE - BATTLESTRINGS_TABLE_START] = sText_AttackersStatRose,
     [STRINGID_DEFENDERSSTATROSE - BATTLESTRINGS_TABLE_START] = gText_DefendersStatRose,
