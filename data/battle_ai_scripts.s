@@ -213,6 +213,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_CALM_MIND, AI_CBM_CalmMind
 	if_effect EFFECT_DRAGON_DANCE, AI_CBM_DragonDance
 	if_effect EFFECT_HONE_CLAWS, AI_CBM_HoneClaws
+	if_effect EFFECT_HEAT_UP, AI_CBM_HeatUp
 	end
 
 AI_CBM_Sleep:
@@ -601,6 +602,11 @@ AI_CBM_CalmMind:
 
 AI_CBM_DragonDance:
 	if_stat_level_equal AI_USER, STAT_ATK, MAX_STAT_STAGE, Score_Minus10
+	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
+	end
+
+AI_CBM_HeatUp:
+	if_stat_level_equal AI_USER, STAT_SPATK, MAX_STAT_STAGE, Score_Minus10
 	if_stat_level_equal AI_USER, STAT_SPEED, MAX_STAT_STAGE, Score_Minus8
 	end
 

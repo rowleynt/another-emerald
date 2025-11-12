@@ -382,6 +382,7 @@ gBattleAnims_Moves::
 	.4byte Move_HONE_CLAWS
 	.4byte Move_BOULDER_PUNCH
 	.4byte Move_BULLET_PUNCH
+	.4byte Move_HEAT_UP
 	.4byte Move_COUNT @ cannot be reached
 
 	.align 2
@@ -10196,6 +10197,16 @@ Move_BULLET_PUNCH:
 	clearmonbg ANIM_ATK_PARTNER
 	clearmonbg ANIM_TARGET
 	blendoff
+	end
+
+Move_HEAT_UP:
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 2, 2, 0, 11, RGB_RED
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 32, 1
+	delay 8
+	call FireSpreadEffect
+	waitforvisualfinish
 	end
 
 Move_COUNT:

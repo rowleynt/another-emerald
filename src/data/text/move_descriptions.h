@@ -1463,6 +1463,10 @@ static const u8 sBulletPunchDescription[] = _(
     "Punches as fast as a bullet\n"
     "to strike first.");
 
+static const u8 sHeatUpDescription[] = _(
+    "Heats up the body to boost\n"
+    "both ATTACK and SPEED.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1834,4 +1838,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_HONE_CLAWS - 1] = sHoneClawsDescription,
     [MOVE_BOULDER_PUNCH - 1] = sBoulderPunchDescription,
     [MOVE_BULLET_PUNCH - 1] = sBulletPunchDescription,
+    [MOVE_HEAT_UP - 1] = sHeatUpDescription,
 };
