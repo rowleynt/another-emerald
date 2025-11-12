@@ -10057,7 +10057,6 @@ Move_POWER_UP_PUNCH:
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_TARGET, 2, 0, 0, ANIM_TARGET, 0
 	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 5, 0, 7, 1
 	waitforvisualfinish
-	clearmonbg ANIM_TARGET
 	blendoff
 	end
 
@@ -10090,7 +10089,6 @@ Move_SEED_BOMB:
 	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_TARGET
 	createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, 16, 16, 1, 1
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
 
@@ -10112,6 +10110,7 @@ Move_X_SCISSOR:
 
 Move_HONE_CLAWS:
 	loadspritegfx ANIM_TAG_SWIPE
+	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET
 	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, 16, 0, 1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 3, 0, 5, 1
@@ -10127,14 +10126,14 @@ Move_HONE_CLAWS:
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET
 	createsprite gFurySwipesSpriteTemplate, ANIM_ATTACKER, 2, -16, 0, 0
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 4, 0, 7, 1
-	clearmonbg ANIM_TARGET
+	clearmonbg ANIM_DEF_PARTNER
 	end
 
 Move_BOULDER_PUNCH:
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_ROCKS
-	monbg ANIM_DEF_PARTNER
+	monbg ANIM_ATK_PARTNER
 	setalpha 12, 8
 	createsprite gShakeMonOrPlatformSpriteTemplate, ANIM_ATTACKER, 2, 4, 1, 10, 1
 	createsprite gAncientPowerRockSpriteTemplate, ANIM_ATTACKER, 2, 20, 32, -48, 50, 2
@@ -10165,7 +10164,7 @@ Move_BOULDER_PUNCH:
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -128, -22
 	createsprite gBoulderPunchRockSpriteTemplate, ANIM_TARGET, 3, 0, 0, -384, -31
 	waitforvisualfinish
-	clearmonbg ANIM_DEF_PARTNER
+	clearmonbg ANIM_ATK_PARTNER
 	blendoff
 	end
 
@@ -10176,7 +10175,7 @@ Move_BULLET_PUNCH:
 	createvisualtask AnimTask_MetallicShine, 5, 0, 0, RGB_BLACK
 	delay 50
 	monbg ANIM_ATK_PARTNER
-	createvisualtask AnimTask_AttackerPunchWithTrace, 2, RGB_BLACK, 10
+	createvisualtask AnimTask_AttackerPunchWithTrace, 2, RGB(0, 0, 0), 10
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	delay 6
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, -15, 18, ANIM_TARGET, 0
@@ -10195,6 +10194,7 @@ Move_BULLET_PUNCH:
 	delay 1
 	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 15, 9, 8, 1, 0
 	clearmonbg ANIM_ATK_PARTNER
+	clearmonbg ANIM_TARGET
 	blendoff
 	end
 
