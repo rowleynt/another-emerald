@@ -236,6 +236,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHeatUp	             @ EFFECT_HEAT_UP
 	.4byte BattleScript_EffectDefenseUp3             @ EFFECT_DEFENSE_UP_3
 	.4byte BattleScript_EffectSpecialAttackUp3       @ EFFECT_SPECIAL_ATTACK_UP_3
+	.4byte BattleScript_EffectShellSmash		     @ EFFECT_SHELL_SMASH
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -955,6 +956,50 @@ BattleScript_EffectDefenseUp3::
 BattleScript_EffectSpecialAttackUp3::
 	setstatchanger STAT_SPATK, 3, FALSE
 	goto BattleScript_EffectStatUp
+
+BattleScript_EffectShellSmash::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstat BS_ATTACKER, CMP_GREATER_THAN, STAT_SPEED, MIN_STAT_STAGE, BattleScript_ShellSmashTryDefense
+	jumpifstat BS_ATTACKER, CMP_NOT_EQUAL, STAT_ATK, MAX_STAT_STAGE, BattleScript_ShellSmashTryDefense
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_DEF, MAX_STAT_STAGE, BattleScript_ButItFailed
+BattleScript_ShellSmashTryDefense::
+	attackanimation
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_DEF, 1
+	copybyte gBattlerTarget, gBattlerAttacker
+	waitanimation
+	setstatchanger STAT_DEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_ShellSmashTrySpecialDefense
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ShellSmashTrySpecialDefense::
+	copybyte gBattlerTarget, gBattlerAttacker
+	setbyte sB_ANIM_TURN, 1
+	setstatchanger STAT_SPDEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_ShellSmashTryAttack
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ShellSmashTryAttack::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK | BIT_SPATK | BIT_SPEED, 0
+	setstatchanger STAT_ATK, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_ShellSmashTrySpecialAttack
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ShellSmashTrySpecialAttack::
+	setstatchanger STAT_SPATK, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_ShellSmashTrySpeed
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ShellSmashTrySpeed::
+	setstatchanger STAT_SPEED, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_ShellSmashEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ShellSmashEnd::
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectTransform::
 	attackcanceler
@@ -4108,6 +4153,11 @@ BattleScript_IntimidatePrevented:
 	printstring STRINGID_PREVENTEDFROMWORKING
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_IntimidateActivatesLoopIncrement
+
+BattleScript_FrigidActivates::
+	setbyte gBattlerTarget, 0
+	setstatchanger STAT_SPEED, 1, TRUE
+	goto BattleScript_IntimidateActivatesLoop
 
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT

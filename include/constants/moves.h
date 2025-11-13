@@ -374,8 +374,9 @@
 #define MOVE_BULLET_PUNCH 365
 #define MOVE_HEAT_UP 366
 #define MOVE_COTTON_GUARD 367
+#define MOVE_SHELL_SMASH 368
 
-#define MOVES_COUNT 368
+#define MOVES_COUNT 369
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

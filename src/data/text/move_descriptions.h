@@ -1471,6 +1471,10 @@ static const u8 sCottonGuardDescription[] = _(
     "Wraps body in soft cotton\n"
     "drastically boosting DEFENSE.");
 
+static const u8 sShellSmashDescription[] = _(
+    "Come up with description\n"
+    "that fits.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1844,4 +1848,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_BULLET_PUNCH - 1] = sBulletPunchDescription,
     [MOVE_HEAT_UP - 1] = sHeatUpDescription,
     [MOVE_COTTON_GUARD - 1] = sCottonGuardDescription,
+    [MOVE_SHELL_SMASH - 1] = sShellSmashDescription,
 };

@@ -384,6 +384,7 @@ gBattleAnims_Moves::
 	.4byte Move_BULLET_PUNCH
 	.4byte Move_HEAT_UP
 	.4byte Move_COTTON_GUARD
+	.4byte Move_SHELL_SMASH
 	.4byte Move_COUNT @ cannot be reached
 
 	.align 2
@@ -10217,6 +10218,26 @@ Move_COTTON_GUARD:
 	call CreateCottonSpores
 	call CreateCottonSpores
 	waitforvisualfinish
+	end
+
+Move_SHELL_SMASH:
+	loadspritegfx ANIM_TAG_CLAMP
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_EXPLOSION
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	createsprite gClampJawSpriteTemplate, ANIM_ATTACKER, 2, -32, 0, 2, 819, 0, 10
+	createsprite gClampJawSpriteTemplate, ANIM_ATTACKER, 2, 32, 0, 6, -819, 0, 10
+	waitforvisualfinish
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	createsprite gClampJawSpriteTemplate, ANIM_ATTACKER, 2, -32, 0, 2, 819, 0, 10
+	createsprite gClampJawSpriteTemplate, ANIM_ATTACKER, 2, 32, 0, 6, -819, 0, 10
+	waitforvisualfinish
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 10, 0, 20, 1
+	call Explosion1
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
 	end
 
 Move_COUNT:
