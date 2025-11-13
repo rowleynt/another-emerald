@@ -237,6 +237,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDefenseUp3             @ EFFECT_DEFENSE_UP_3
 	.4byte BattleScript_EffectSpecialAttackUp3       @ EFFECT_SPECIAL_ATTACK_UP_3
 	.4byte BattleScript_EffectShellSmash		     @ EFFECT_SHELL_SMASH
+	.4byte BattleScript_EffectCloseCombat		     @ EFFECT_CLOSE_COMBAT
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
@@ -967,7 +968,7 @@ BattleScript_EffectShellSmash::
 BattleScript_ShellSmashTryDefense::
 	attackanimation
 	setbyte sSTAT_ANIM_PLAYED, FALSE
-	playstatchangeanimation BS_ATTACKER, BIT_DEF, 1
+	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, 1
 	copybyte gBattlerTarget, gBattlerAttacker
 	waitanimation
 	setstatchanger STAT_DEF, 1, TRUE
@@ -2888,6 +2889,10 @@ BattleScript_HoneClawsTryAcc::
 BattleScript_HoneClawsEnd::
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectCloseCombat::
+	setmoveeffect MOVE_EFFECT_DEF_SPDEF_DOWN | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	goto BattleScript_EffectHit
+
 BattleScript_EffectHeatUp::
 	attackcanceler
 	attackstring
@@ -3745,6 +3750,25 @@ BattleScript_AtkDefDown_TryDef::
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AtkDefDown_End::
+	return
+
+BattleScript_DefSpDefDown::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_NEGATIVE | STAT_CHANGE_MULTIPLE_STATS
+	playstatchangeanimation BS_ATTACKER, BIT_DEF, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_DEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_DefSpDefDown_TrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_DefSpDefDown_TrySpDef
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DefSpDefDown_TrySpDef::
+	playstatchangeanimation BS_ATTACKER, BIT_SPDEF, STAT_CHANGE_CANT_PREVENT | STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_SPDEF, 1, TRUE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN | STAT_CHANGE_ALLOW_PTR, BattleScript_DefSpDefDown_End
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_DefSpDefDown_End
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DefSpDefDown_End::
 	return
 
 BattleScript_KnockedOff::

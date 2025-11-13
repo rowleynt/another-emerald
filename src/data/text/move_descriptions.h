@@ -1475,6 +1475,10 @@ static const u8 sShellSmashDescription[] = _(
     "Come up with description\n"
     "that fits.");
 
+static const u8 sCloseCombatDescription[] = _(
+    "Fights foe without guarding.\n"
+    "Lowers DEFENSE & SP.DEFENSE.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -1849,4 +1853,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_HEAT_UP - 1] = sHeatUpDescription,
     [MOVE_COTTON_GUARD - 1] = sCottonGuardDescription,
     [MOVE_SHELL_SMASH - 1] = sShellSmashDescription,
+    [MOVE_CLOSE_COMBAT - 1] = sCloseCombatDescription,
 };
