@@ -4601,6 +4601,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     u8 holdEffectParam = 0;
     u16 moveBattler1 = 0, moveBattler2 = 0;
     s8 p1 = 0, p2 = 0;
+    s8 movePriority1, movePriority2;
 
     if (WEATHER_HAS_EFFECT)
     {
@@ -4719,12 +4720,15 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
             moveBattler2 = MOVE_NONE;
         }
     }
+    
+    movePriority1 = GetMovePriority(moveBattler1, battler1, gBattleMoves[moveBattler1].priority);
+    movePriority2 = GetMovePriority(moveBattler2, battler2, gBattleMoves[moveBattler2].priority);
 
     // both move priorities are different than 0
-    if (gBattleMoves[moveBattler1].priority != 0 || gBattleMoves[moveBattler2].priority != 0)
+    if (movePriority1 != 0 || movePriority2 != 0)
     {
         // both priorities are the same
-        if (gBattleMoves[moveBattler1].priority == gBattleMoves[moveBattler2].priority)
+        if (movePriority1 == movePriority2)
         {
             if (speedBattler1 == speedBattler2 && Random() & 1)
                 strikesFirst = 2; // same speeds, same priorities
@@ -4733,7 +4737,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 
             // else battler1 has more speed
         }
-        else if (gBattleMoves[moveBattler1].priority < gBattleMoves[moveBattler2].priority)
+        else if (movePriority1 < movePriority2)
         {
             strikesFirst = 1; // battler2's move has greater priority
         }
@@ -4755,7 +4759,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 }
 
 // TODO: fix dynamic move priorities
-u8 GetMovePriority(u8 move, u8 battler, s8 priority)
+s8 GetMovePriority(u8 move, u8 battler, s8 priority)
 {
     switch (gBattleMons[battler].ability)
     {
