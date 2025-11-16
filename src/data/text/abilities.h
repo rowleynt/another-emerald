@@ -84,6 +84,7 @@ static const u8 sIronFistDescription[] = _("Powers up punching moves.");
 static const u8 sStrongJawDescription[] = _("Powers up biting moves.");
 static const u8 sFurCoatDescription[] = _("Raises DEFENSE.");
 static const u8 sSuperheatedDescription[] = _("Protects against WATER moves.");
+static const u8 sAdaptabilityDescription[] = _("Powers up same type moves.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -173,6 +174,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_STRONG_JAW] = _("STRONG JAW"),
     [ABILITY_FUR_COAT] = _("FUR COAT"),
     [ABILITY_SUPERHEATED] = _("SUPERHEATED"),
+    [ABILITY_ADAPTABILITY] = _("ADAPTABILITY"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -263,4 +265,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_STRONG_JAW] = sStrongJawDescription,
     [ABILITY_FUR_COAT] = sFurCoatDescription,
     [ABILITY_SUPERHEATED] = sSuperheatedDescription,
+    [ABILITY_ADAPTABILITY] = sAdaptabilityDescription,
 };

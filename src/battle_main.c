@@ -4758,7 +4758,6 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     return strikesFirst;
 }
 
-// TODO: fix dynamic move priorities
 s8 GetMovePriority(u8 move, u8 battler, s8 priority)
 {
     switch (gBattleMons[battler].ability)
